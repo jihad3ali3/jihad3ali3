@@ -1,4 +1,3 @@
-التصميم جيد لاتعدله تحقق من النصوص والاملاء
 <!-- ═══════════════════════════════════════════════════════════════════
      GITHUB PROFILE README — Jihad Ali Ghalib Almesbahi
      Repo: github.com/jihad3ali3/jihad3ali3  →  README.md
