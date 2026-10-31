@@ -27,7 +27,7 @@
 | توزيع اللغات | `plugin_languages` |
 | عادات الكود + رسم Commit activity per hour/day | `plugin_habits` (facts + charts) |
 
-الألوان متظبطة على ثيم البروفايل (بنفسجي `#8B5CF6` + سماوي `#22D3EE`) عن طريق `extras_css` و `extras_js`،
+الألوان متظبطة على ثيم البروفايل (أحمر `#FF2D20` + برتقالي `#FF8A3D` + كهرماني `#FFB800`) عن طريق `extras_css` و `extras_js`،
 والتوقيت مضبوط على `Asia/Aden`.
 
 ## التشغيل
