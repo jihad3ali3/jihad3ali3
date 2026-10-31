@@ -25,7 +25,7 @@
 | الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` | `METRICS_TOKEN` |
 | تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) | — |
 | توزيع اللغات + الـ legend (نسب/أسطر/حجم) | `plugin_languages` + `plugin_languages_indepth` | `METRICS_TOKEN` |
-| **Mastered technologies** (شبكة أيقونات التكنولوجيات) | `plugin_topics` (`mode: icons`) | **topics على الريبوهات** |
+| **Mastered technologies** (شبكة أيقونات التكنولوجيات) | `plugin_topics` (`mode: mastered`) | **تعمل Star لريبوهات فيها topics** |
 | عادات الكود + رسوم (time of day / day / language activity) | `plugin_habits` (facts + charts) | `METRICS_TOKEN` |
 | أسطر الكود المضافة/المحذوفة | `plugin_lines` | — |
 | شارات الإنجازات | `plugin_achievements` (compact) | — |

@@ -125,10 +125,10 @@ jobs:
             jihad3ali3/replit
             jihad3ali3/replitLastVERSION
             jihad3ali3/-
-          # Mastered technologies: topic icons
-          # (fill this by adding topics — laravel, php, mysql, react … — to your repositories)
+          # Mastered technologies: icon grid built from the topics of the repos you star
+          # (star laravel/laravel, php/php-src, reactjs/react … and their topics show up here)
           plugin_topics: "yes"
-          plugin_topics_mode: icons
+          plugin_topics_mode: mastered
           plugin_topics_limit: 0
           # Lines of code added / removed
           plugin_lines: "yes"
