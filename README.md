@@ -149,19 +149,13 @@
 
 <div align="center">
 
-<img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=jihad3ali3&theme=github_dark" alt="Profile details" />
+<!-- Generated daily by .github/workflows/metrics.yml (lowlighter/metrics).
+     Do not edit metrics.svg by hand — it is overwritten on every run. -->
+<img src="metrics.svg" alt="GitHub dashboard: profile, activity, repositories, 3D contributions calendar, languages and coding habits" />
 
 <br /><br />
 
-<img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=jihad3ali3&theme=github_dark" alt="Stats" />
-<img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=jihad3ali3&theme=github_dark" alt="Most used languages" />
-
-<br /><br />
-
-<!-- Optional: contribution snake animation. Requires the workflow in .github/workflows/snake.yml
-     (included with this file). Uncomment the line below AFTER the first workflow run. -->
-
-<!-- <img src="https://raw.githubusercontent.com/jihad3ali3/jihad3ali3/output/github-contribution-grid-snake-dark.svg" alt="Contribution snake" /> -->
+<sub>Dashboard generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a> · <a href="https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml">workflow status</a></sub>
 
 </div>
 
