@@ -1,6 +1,6 @@
 name: Profile metrics
 
-# Rebuilds the SVG cards used by README.md
+# Rebuilds the dashboard SVG used by README.md
 # Powered by https://github.com/lowlighter/metrics
 on:
   schedule:
@@ -12,7 +12,7 @@ on:
     paths:
       - ".github/workflows/metrics.yml"
 
-# Required so the action can push the generated SVGs back to this repository
+# Required so the action can push the generated SVG back to this repository
 permissions:
   contents: write
 
@@ -32,7 +32,7 @@ env:
     a {
       color: #22D3EE;
     }
-  # Re-color the GitHub "green squares" into the violet scale
+  # Re-color the GitHub "green squares" (calendar + habit charts) into violet
   CYBER_JS: |
     const palette = {
       "#ebedf0": "#21262d",
@@ -49,7 +49,7 @@ env:
 
 jobs:
   metrics:
-    name: Generate cards
+    name: Generate dashboard
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -58,11 +58,11 @@ jobs:
           METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           if [ -z "$METRICS_TOKEN" ]; then
-            echo "::warning title=Using GITHUB_TOKEN::No METRICS_TOKEN secret found, so cards fall back to the built-in GITHUB_TOKEN (public data only). See METRICS.md."
+            echo "::warning title=Using GITHUB_TOKEN::No METRICS_TOKEN secret found, so the dashboard falls back to the built-in GITHUB_TOKEN (public data only, private contributions will be missing). See METRICS.md."
           fi
 
-      # 1) Profile overview: header, activity, repositories, metadata
-      - name: Overview card (metrics.cyber.svg)
+      # Wide dashboard: header + activity + repositories + 3D calendar + languages + habits
+      - name: Dashboard card (metrics.cyber.svg)
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.cyber.svg
@@ -70,63 +70,43 @@ jobs:
           committer_token: ${{ github.token }}
           user: jihad3ali3
           template: classic
+          config_display: large
+          config_timezone: Asia/Aden
+          config_animations: "yes"
+          config_order: base.header, base.activity+community, base.repositories, isocalendar, languages, habits
           base: header, activity, repositories, metadata
           repositories: 100
           repositories_forks: "no"
-          config_timezone: Asia/Aden
-          config_animations: "yes"
-          extras_css: ${{ env.CYBER_CSS }}
-          extras_js: ${{ env.CYBER_JS }}
-          retries: 3
-          retries_delay: 10
-          plugins_errors_fatal: "no"
-
-      # 2) Contribution calendar + coding habits
-      - name: Activity card (metrics.activity.svg)
-        if: always()
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.activity.svg
-          token: ${{ secrets.METRICS_TOKEN || github.token }}
-          committer_token: ${{ github.token }}
-          user: jihad3ali3
-          template: classic
-          base: ""
-          config_order: isocalendar, habits
-          config_timezone: Asia/Aden
-          config_animations: "yes"
+          # 3D isometric contributions calendar + streaks
           plugin_isocalendar: "yes"
           plugin_isocalendar_duration: full-year
+          # Languages breakdown
+          plugin_languages: "yes"
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          plugin_languages_threshold: 0%
+          plugin_languages_analysis_timeout: 20
+          plugin_languages_skipped: |
+            jihad3ali3/camera_on_hostinger
+            jihad3ali3/Camera_without_anything
+            jihad3ali3/camera2
+            jihad3ali3/jihad_Vps_sittiing
+            jihad3ali3/ONE
+            jihad3ali3/Testmgit_github1
+            jihad3ali3/Testmgit_github
+            jihad3ali3/TESTC
+            jihad3ali3/skills-introduction-to-github
+            jihad3ali3/replit
+            jihad3ali3/replitLastVERSION
+            jihad3ali3/-
+          # Coding habits: facts + commit activity charts
           plugin_habits: "yes"
           plugin_habits_from: 200
           plugin_habits_days: 14
           plugin_habits_facts: "yes"
-          extras_css: ${{ env.CYBER_CSS }}
-          extras_js: ${{ env.CYBER_JS }}
-          retries: 3
-          retries_delay: 10
-          plugins_errors_fatal: "no"
-
-      # 3) Languages breakdown
-      - name: Languages card (metrics.languages.svg)
-        if: always()
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.languages.svg
-          token: ${{ secrets.METRICS_TOKEN || github.token }}
-          committer_token: ${{ github.token }}
-          user: jihad3ali3
-          template: classic
-          base: ""
-          config_timezone: Asia/Aden
-          plugin_languages: "yes"
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          plugin_languages_categories: programming, markup
-          plugin_languages_limit: 8
-          plugin_languages_threshold: 0%
-          plugin_languages_other: "yes"
-          plugin_languages_analysis_timeout: 20
+          plugin_habits_charts: "yes"
+          plugin_habits_charts_type: classic
           extras_css: ${{ env.CYBER_CSS }}
           extras_js: ${{ env.CYBER_JS }}
           retries: 3

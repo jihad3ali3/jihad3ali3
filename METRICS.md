@@ -1,23 +1,31 @@
-# 🛠️ دليل بطاقات الـ Metrics
+# 🛠️ دليل داشبورد الـ Metrics
 
-البروفايل بيستعمل [lowlighter/metrics](https://github.com/lowlighter/metrics) عشان يولّد صور SVG فيها إحصائيات GitHub،
-وبعدها `README.md` بيعرضها. الصور **مش مرفوعة يدوي** — الـ workflow بيبنيها ويحدّثها لوحده.
+البروفايل بيستعمل [lowlighter/metrics](https://github.com/lowlighter/metrics) عشان يولّد صورة SVG فيها إحصائيات GitHub،
+وبعدها `README.md` بيعرضها. الصورة **مش مرفوعة يدوي** — الـ workflow بيبنيها ويحدّثها لوحده.
 
 ## إيه اللي كان مكسور قبل كذا؟
 
 - `README.md` كان بيشير إلى `metrics.cyber.svg` لكن الملف **مش موجود** أصلًا في الريبو.
 - مفيش أي workflow في `.github/workflows/` بيشغّل metrics، فالصورة كانت بتظهر مكسورة (broken image).
-- كان فيه ملف واحد بس مطلوب، والبروفايل محتاج تقسيم أوضح (نظرة عامة / نشاط / لغات).
 
 ## إيه اللي اتعمل؟
 
 | الملف | الوظيفة |
 | :--- | :--- |
-| `.github/workflows/metrics.yml` | يبني 3 بطاقات SVG ويحوّلها للريبو تلقائيًا |
-| `metrics.cyber.svg` | نظرة عامة: الهيدر، النشاط، الريبوهات، البيانات |
-| `metrics.activity.svg` | تقويم المساهمات (سنة كاملة) + عادات الكود |
-| `metrics.languages.svg` | توزيع اللغات المستخدمة |
-| `README.md` | بيعرض البطاقات الثلاثة بمسارات نسبية |
+| `.github/workflows/metrics.yml` | يبني الداشبورد ويحوّله للريبو تلقائيًا |
+| `metrics.cyber.svg` | داشبورد واحد عريض (`config_display: large`) |
+| `README.md` | بيعرض الداشبورد بمسار نسبي |
+
+الداشبورد فيه:
+
+| القسم | البلوجن / الإعداد |
+| :--- | :--- |
+| الهيدر (الاسم، تاريخ الانضمام، الموقع، المتابعين) | `base: header` |
+| عدّادات النشاط (commits / PRs / comments) | `base: activity` |
+| الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` |
+| تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) |
+| توزيع اللغات | `plugin_languages` |
+| عادات الكود + رسم Commit activity per hour/day | `plugin_habits` (facts + charts) |
 
 الألوان متظبطة على ثيم البروفايل (بنفسجي `#8B5CF6` + سماوي `#22D3EE`) عن طريق `extras_css` و `extras_js`،
 والتوقيت مضبوط على `Asia/Aden`.
@@ -26,13 +34,13 @@
 
 1. ادمج الـ Pull Request في `main` — أول تشغيل بيبدأ تلقائيًا لأن الـ workflow جديد.
 2. أو من تبويب **Actions ← Profile metrics ← Run workflow**.
-3. بعد ما يخلص، هتلاقي الملفات الثلاثة في جذر الريبو، وصور الـ README هتشتغل.
+3. بعد ما يخلص، هتلاقي `metrics.cyber.svg` في جذر الريبو، وصورة الـ README هتشتغل.
 4. التشغيل المجدول: كل يوم **02:17 UTC** (05:17 صباحًا بتوقيت صنعاء).
 
 ## التوكن (اختياري لكن مستحسن)
 
 الـ workflow بيشتغل بـ `GITHUB_TOKEN` المدمج، وكفاية للريبوهات العامة فقط.
-عشان المساهمات الخاصة (private) والأورجانيزيشنز تظهر في التقويم:
+عشان المساهمات الخاصة (private) تظهر في التقويم والـ streaks:
 
 1. اعمل Personal Access Token (classic) من Settings ← Developer settings، بصلاحيات:
    - `repo` (للمساهمات الخاصة)
@@ -50,13 +58,15 @@
   plugin_stars: "yes"
   plugin_stars_limit: 4
   ```
-- **تغيير الألوان**: عدّل `CYBER_CSS` و `CYBER_JS` في أعلى الـ workflow (مش محتاج تلمس باقي الملف).
-- **اسم/عدد البطاقات**: كل بطاقة عبارة عن step منفصل، تقدر تشيل أي واحدة (وشيل صورتها من `README.md`).
-- **وقت التشغيل**: عدّل الـ `cron` (بتوقيت UTC).
 - **ترتيب الأقسام**: `config_order`.
+- **استبعاد ريبوهات من حساب اللغات**: `plugin_languages_skipped` (مستبعد حاليًا ريبوهات التجارب/الكاميرا
+  زي `camera2` و`TESTC` و`ONE` و`replit` عشان الكارت يبان بلغاتك الحقيقية).
+- **تغيير الألوان**: عدّل `CYBER_CSS` و `CYBER_JS` في أعلى الـ workflow (مش محتاج تلمس باقي الملف).
+- **عرض عادي بدل العريض**: شيل `config_display: large` أو خليه `columns`.
+- **وقت التشغيل**: عدّل الـ `cron` (بتوقيت UTC).
 
 ## ملاحظات
 
-- تشغيل الـ workflow بياخد تقريبًا 5–10 دقايق (3 مرات render).
-- لو بطاقة فشلت، الباقي بيكمل (`if: always()`)، وتقدر تشوف السبب في سجل الـ Actions.
-- ما تعدّلش ملفات `metrics.*.svg` يدوي — أول تشغيل جديد هيكتب فوقها.
+- تشغيل الـ workflow بياخد تقريبًا 2–5 دقايق.
+- لو الداشبورد ما اشتغلش، بص على سجل الـ Actions — و`plugins_errors_fatal: "no"` بتخلي أي بلوجن يفشل من غير ما يوقف الصورة.
+- ما تعدّلش `metrics.cyber.svg` يدوي — أول تشغيل جديد هيكتب فوقه.

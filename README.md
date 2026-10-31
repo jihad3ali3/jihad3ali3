@@ -33,22 +33,14 @@ Engineering graduate and Laravel developer. I take an ambiguous problem, model i
 
 ---
 
-## 📊 GitHub in numbers
+## 📊 GitHub dashboard
 
 <p align="center">
-  <img src="metrics.cyber.svg" alt="Profile overview: header, activity, repositories and metadata" />
-</p>
-
-<p align="center">
-  <img src="metrics.activity.svg" alt="Contribution calendar and coding habits" />
-</p>
-
-<p align="center">
-  <img src="metrics.languages.svg" alt="Languages used across repositories" />
+  <img src="metrics.cyber.svg" alt="GitHub dashboard: profile, activity, repositories, 3D contributions calendar, languages and coding habits" />
 </p>
 
 ---
 
 <div align="center">
-  <sub>Cards are generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a> · <a href="https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml">workflow status</a></sub>
+  <sub>Dashboard is generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a> · <a href="https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml">workflow status</a></sub>
 </div>
