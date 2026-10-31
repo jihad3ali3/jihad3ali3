@@ -32,6 +32,14 @@ env:
     a {
       color: #FF8A3D;
     }
+    /* calendar tiles + habit charts both read these variables */
+    :root {
+      --color-calendar-graph-day-bg: #21262d;
+      --color-calendar-graph-day-L1-bg: #FFD9A8;
+      --color-calendar-graph-day-L2-bg: #FFB800;
+      --color-calendar-graph-day-L3-bg: #FF8A3D;
+      --color-calendar-graph-day-L4-bg: #FF2D20;
+    }
   # Re-color the GitHub "green squares" (calendar + habit charts) into the same ramp
   THEME_JS: |
     const palette = {
@@ -41,9 +49,11 @@ env:
       "#30a14e": "#FF8A3D",
       "#216e39": "#FF2D20",
     }
-    for (const [from, to] of Object.entries(palette)) {
-      for (const node of document.querySelectorAll(`svg [fill="${from}"]`)) {
-        node.setAttribute("fill", to)
+    // GitHub returns these colors as fill/stroke attributes (case may vary)
+    for (const node of document.querySelectorAll("svg [fill], svg [stroke]")) {
+      for (const attribute of ["fill", "stroke"]) {
+        const value = node.getAttribute(attribute)?.toLowerCase()
+        if (value && palette[value]) node.setAttribute(attribute, palette[value])
       }
     }
 
