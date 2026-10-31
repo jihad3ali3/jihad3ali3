@@ -1,4 +1,4 @@
-```html
+التصميم جيد لاتعدله تحقق من النصوص والاملاء
 <!-- ═══════════════════════════════════════════════════════════════════
      GITHUB PROFILE README — Jihad Ali Ghalib Almesbahi
      Repo: github.com/jihad3ali3/jihad3ali3  →  README.md
@@ -14,11 +14,10 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF2D20,50:FF8A3D,100:FFB800&height=190&section=header&text=Jihad%20Ali%20Ghalib%20Almesbahi&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=Laravel%20Developer%20%C2%B7%20Backend%20Engineer%20%C2%B7%20System%20Analyst&descAlignY=66&descSize=17&animation=fadeIn" alt="Jihad Ali Ghalib Almesbahi" />
 
-<!-- Animated subtitle — the name above never moves, only these role words type out -->
+<!-- animated subtitle — the NAME above never moves, only these role words type out -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=1400&color=FFB800&center=true&vCenter=true&width=620&height=45&lines=Laravel+Developer;Backend+Engineer;System+Analyst;Database+Designer" alt="Roles" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=1400&color=FFB800&center=true&vCenter=true&width=620&height=45&lines=Laravel+Developer;Backend+Engineer;System+Analyst;Database+Designer" alt="Professional roles" />
-
-<em>I transform complex requirements into well-structured, reliable, and maintainable software.</em>
+<em>I turn ambiguous requirements into structured, reliable, and maintainable software.</em>
 
 <br /><br />
 
@@ -44,7 +43,7 @@
     </td>
     <td align="center" width="25%">
       <img src="https://img.shields.io/badge/%F0%9F%92%BB-Core_Focus-0D1117?style=flat-square&labelColor=FF8A3D" alt="" /><br />
-      <b>Laravel &amp; Backend Development</b>
+      <b>Laravel &amp; Backend</b>
     </td>
     <td align="center" width="25%">
       <img src="https://img.shields.io/badge/%F0%9F%97%84%EF%B8%8F-Specialization-0D1117?style=flat-square&labelColor=FFB800" alt="" /><br />
@@ -52,7 +51,7 @@
     </td>
     <td align="center" width="25%">
       <img src="https://img.shields.io/badge/%F0%9F%8F%97%EF%B8%8F-Strength-0D1117?style=flat-square&labelColor=FF2D20" alt="" /><br />
-      <b>Systems Analysis</b>
+      <b>System Analysis</b>
     </td>
   </tr>
 </table>
@@ -118,27 +117,27 @@
 
 <!-- ──────────────────────── 4. WHERE I ADD VALUE ──────────────────────── -->
 
-## 🎯 Where I Bring Value
+## 🎯 Where I Add Value
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>🧠 System Analysis</h3>
-      Translating business needs into clear requirements, use cases, and actionable technical plans — <b>before</b> writing a single line of code.
+      Translating business needs into requirements, use cases, and a concrete technical plan — <b>before</b> a single line of code.
     </td>
     <td width="50%" valign="top">
       <h3>🗄️ Database Design</h3>
-      Designing normalized schemas, well-defined relationships, and efficient queries that scale as data grows.
+      Normalized schemas, well-defined relationships, and queries that stay fast as the data grows.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h3>⚙️ Backend Development</h3>
-      Building Laravel applications with clean architecture, SOLID principles, and reusable components.
+      Laravel applications built on clean architecture, SOLID principles, and reusable components.
     </td>
     <td width="50%" valign="top">
       <h3>🧩 Problem Solving</h3>
-      Breaking down complex, ambiguous problems into small, verifiable, and testable steps.
+      Decomposing complex, ambiguous problems into small, verifiable, testable steps.
     </td>
   </tr>
 </table>
@@ -155,7 +154,7 @@
 
 <br /><br />
 
-<img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=jihad3ali3&theme=github_dark" alt="GitHub statistics" />
+<img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=jihad3ali3&theme=github_dark" alt="Stats" />
 <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=jihad3ali3&theme=github_dark" alt="Most used languages" />
 
 <br /><br />
@@ -178,21 +177,21 @@
 > Analyze carefully. Design thoughtfully. Build efficiently. Improve continuously.
 
 <details>
-<summary><b>The Four Principles That Guide My Work →</b></summary>
+<summary><b>The four principles I actually work by →</b></summary>
 
 <br />
 
 **1. Understand before building.**
-The most expensive bug is the one built on a misunderstood requirement.
+The most expensive bug is the one you wrote against the wrong requirement.
 
 **2. Design the data first.**
-Many architectural problems downstream begin with poor data modeling upstream.
+Most architectural problems downstream are really schema problems upstream.
 
 **3. Write for the next reader.**
 Code is read far more often than it is written. Clarity beats cleverness.
 
 **4. Ship, then refine.**
-Working software in the hands of real users teaches more than another week of planning.
+Working software in front of real users teaches more than another week of planning.
 
 </details>
 
@@ -200,10 +199,10 @@ Working software in the hands of real users teaches more than another week of pl
 
 ## 📌 Currently
 
-- 🔭 Building production-ready Laravel applications with a focus on backend quality
-- 🌱 Expanding my expertise in **software architecture**, **testing**, and **query optimization**
-- 🤝 Open to **Laravel and backend collaboration** and meaningful engineering challenges
-- 💬 Ask me about **Laravel, database design, or systems analysis**
+- 🔭 Building production Laravel applications with a focus on backend quality
+- 🌱 Deepening my knowledge of **software architecture**, **testing**, and **query optimization**
+- 🤝 Open to **Laravel / backend collaboration** and meaningful engineering challenges
+- 💬 Ask me about **Laravel, database design, or system analysis**
 
 <br />
 
@@ -211,9 +210,8 @@ Working software in the hands of real users teaches more than another week of pl
 
 <h3>Let's build something meaningful. 🤝</h3>
 
-<em>Always open to learning, collaboration, and challenging engineering opportunities.</em>
+<em>Always open to learning, collaboration, and interesting engineering challenges.</em>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF2D20,50:FF8A3D,100:FFB800&height=120&section=footer" alt="" />
 
 </div>
-```
