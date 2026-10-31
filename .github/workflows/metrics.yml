@@ -21,33 +21,46 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # ---- Laravel red / orange / amber accents (applied on top of the classic template) ----
+  # ---- Blue / indigo / cyan accents (applied on top of the classic template) ----
   THEME_CSS: |
     h1, h2, h3 {
-      color: #FF2D20 !important;
+      color: #6366F1 !important;
     }
     .field svg {
-      fill: #FF8A3D;
+      fill: #22D3EE;
     }
     a {
-      color: #FF8A3D;
+      color: #22D3EE;
     }
     /* calendar tiles + habit charts both read these variables */
     :root {
       --color-calendar-graph-day-bg: #21262d;
-      --color-calendar-graph-day-L1-bg: #FFD9A8;
-      --color-calendar-graph-day-L2-bg: #FFB800;
-      --color-calendar-graph-day-L3-bg: #FF8A3D;
-      --color-calendar-graph-day-L4-bg: #FF2D20;
+      --color-calendar-graph-day-L1-bg: #1E3A8A;
+      --color-calendar-graph-day-L2-bg: #3B82F6;
+      --color-calendar-graph-day-L3-bg: #6366F1;
+      --color-calendar-graph-day-L4-bg: #22D3EE;
     }
-  # Re-color the GitHub "green squares" (calendar + habit charts) into the same ramp
+  # Re-color the contribution graph into the same ramp.
+  # GitHub swaps its palette by season (green in spring, halloween in october,
+  # winter in december), so every known variant is mapped to keep the theme stable.
   THEME_JS: |
     const palette = {
+      // default (green)
       "#ebedf0": "#21262d",
-      "#9be9a8": "#FFD9A8",
-      "#40c463": "#FFB800",
-      "#30a14e": "#FF8A3D",
-      "#216e39": "#FF2D20",
+      "#9be9a8": "#1E3A8A",
+      "#40c463": "#3B82F6",
+      "#30a14e": "#6366F1",
+      "#216e39": "#22D3EE",
+      // halloween (october)
+      "#ffee4a": "#1E3A8A",
+      "#ffc501": "#3B82F6",
+      "#fe9600": "#6366F1",
+      "#03001c": "#22D3EE",
+      // winter (december)
+      "#0a3069": "#1E3A8A",
+      "#0969da": "#3B82F6",
+      "#54aeff": "#6366F1",
+      "#b6e3ff": "#22D3EE",
     }
     // GitHub returns these colors as fill/stroke attributes (case may vary)
     for (const node of document.querySelectorAll("svg [fill], svg [stroke]")) {
