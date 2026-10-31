@@ -19,12 +19,6 @@
 
 ---
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/jihad3ali3/jihad3ali3/main/metrics.cyber.svg" alt="Cyber violet metrics" />
-</p>
-
----
-
 ## 🧠 About Me
 
 Engineering graduate and Laravel developer. I take an ambiguous problem, model it into data, design the flow, then build it — clean, documented, and maintainable.
@@ -36,3 +30,25 @@ Engineering graduate and Laravel developer. I take an ambiguous problem, model i
 | **Frontend** | React, Inertia.js, Tailwind |
 | **Practice** | SOLID, design patterns, clean code |
 | **Analysis** | Requirements, use cases, ERD, process flows |
+
+---
+
+## 📊 GitHub in numbers
+
+<p align="center">
+  <img src="metrics.cyber.svg" alt="Profile overview: header, activity, repositories and metadata" />
+</p>
+
+<p align="center">
+  <img src="metrics.activity.svg" alt="Contribution calendar and coding habits" />
+</p>
+
+<p align="center">
+  <img src="metrics.languages.svg" alt="Languages used across repositories" />
+</p>
+
+---
+
+<div align="center">
+  <sub>Cards are generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a> · <a href="https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml">workflow status</a></sub>
+</div>

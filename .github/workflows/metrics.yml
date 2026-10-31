@@ -1,0 +1,134 @@
+name: Profile metrics
+
+# Rebuilds the SVG cards used by README.md
+# Powered by https://github.com/lowlighter/metrics
+on:
+  schedule:
+    # Every day at 02:17 UTC (05:17 in Sanaa)
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/metrics.yml"
+
+# Required so the action can push the generated SVGs back to this repository
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+env:
+  # ---- Cyber violet / cyan accents (applied on top of the classic template) ----
+  CYBER_CSS: |
+    h1, h2, h3 {
+      color: #8B5CF6 !important;
+    }
+    .field svg {
+      fill: #22D3EE;
+    }
+    a {
+      color: #22D3EE;
+    }
+  # Re-color the GitHub "green squares" into the violet scale
+  CYBER_JS: |
+    const palette = {
+      "#ebedf0": "#21262d",
+      "#9be9a8": "#c4b5fd",
+      "#40c463": "#8b5cf6",
+      "#30a14e": "#6d28d9",
+      "#216e39": "#4c1d95",
+    }
+    for (const [from, to] of Object.entries(palette)) {
+      for (const node of document.querySelectorAll(`svg [fill="${from}"]`)) {
+        node.setAttribute("fill", to)
+      }
+    }
+
+jobs:
+  metrics:
+    name: Generate cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Token check
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -z "$METRICS_TOKEN" ]; then
+            echo "::warning title=Using GITHUB_TOKEN::No METRICS_TOKEN secret found, so cards fall back to the built-in GITHUB_TOKEN (public data only). See METRICS.md."
+          fi
+
+      # 1) Profile overview: header, activity, repositories, metadata
+      - name: Overview card (metrics.cyber.svg)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.cyber.svg
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          committer_token: ${{ github.token }}
+          user: jihad3ali3
+          template: classic
+          base: header, activity, repositories, metadata
+          repositories: 100
+          repositories_forks: "no"
+          config_timezone: Asia/Aden
+          config_animations: "yes"
+          extras_css: ${{ env.CYBER_CSS }}
+          extras_js: ${{ env.CYBER_JS }}
+          retries: 3
+          retries_delay: 10
+          plugins_errors_fatal: "no"
+
+      # 2) Contribution calendar + coding habits
+      - name: Activity card (metrics.activity.svg)
+        if: always()
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.activity.svg
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          committer_token: ${{ github.token }}
+          user: jihad3ali3
+          template: classic
+          base: ""
+          config_order: isocalendar, habits
+          config_timezone: Asia/Aden
+          config_animations: "yes"
+          plugin_isocalendar: "yes"
+          plugin_isocalendar_duration: full-year
+          plugin_habits: "yes"
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: "yes"
+          extras_css: ${{ env.CYBER_CSS }}
+          extras_js: ${{ env.CYBER_JS }}
+          retries: 3
+          retries_delay: 10
+          plugins_errors_fatal: "no"
+
+      # 3) Languages breakdown
+      - name: Languages card (metrics.languages.svg)
+        if: always()
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.languages.svg
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          committer_token: ${{ github.token }}
+          user: jihad3ali3
+          template: classic
+          base: ""
+          config_timezone: Asia/Aden
+          plugin_languages: "yes"
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_categories: programming, markup
+          plugin_languages_limit: 8
+          plugin_languages_threshold: 0%
+          plugin_languages_other: "yes"
+          plugin_languages_analysis_timeout: 20
+          extras_css: ${{ env.CYBER_CSS }}
+          extras_js: ${{ env.CYBER_JS }}
+          retries: 3
+          retries_delay: 10
+          plugins_errors_fatal: "no"
