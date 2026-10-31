@@ -18,14 +18,19 @@
 
 الداشبورد فيه:
 
-| القسم | البلوجن / الإعداد |
-| :--- | :--- |
-| الهيدر (الاسم، تاريخ الانضمام، الموقع، المتابعين) | `base: header` |
-| عدّادات النشاط (commits / PRs / comments) | `base: activity` |
-| الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` |
-| تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) |
-| توزيع اللغات | `plugin_languages` |
-| عادات الكود + رسم Commit activity per hour/day | `plugin_habits` (facts + charts) |
+| القسم | البلوجن / الإعداد | محتاج إيه |
+| :--- | :--- | :--- |
+| الهيدر (الاسم، تاريخ الانضمام، الموقع، المتابعين) | `base: header` | — |
+| عدّادات النشاط (commits / PRs / comments) | `base: activity` | — |
+| الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` | `METRICS_TOKEN` |
+| تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) | — |
+| توزيع اللغات + الـ legend (نسب/أسطر/حجم) | `plugin_languages` + `plugin_languages_indepth` | `METRICS_TOKEN` |
+| **Mastered technologies** (شبكة أيقونات التكنولوجيات) | `plugin_topics` (`mode: icons`) | **topics على الريبوهات** |
+| عادات الكود + رسوم (time of day / day / language activity) | `plugin_habits` (facts + charts) | `METRICS_TOKEN` |
+| أسطر الكود المضافة/المحذوفة | `plugin_lines` | — |
+| شارات الإنجازات | `plugin_achievements` (compact) | — |
+| آخر نشاط على الـ issues / PRs | `plugin_followup` (indepth) | — |
+| الـ Reactions اللي استلمتها | `plugin_reactions` | — |
 
 الألوان متظبطة على ثيم البروفايل (أزرق `#3B82F6` + إنديغو `#6366F1` + سماوي `#22D3EE`) عن طريق `THEME_CSS` و `THEME_JS`،
 والتوقيت مضبوط على `Asia/Aden`.
@@ -73,3 +78,15 @@
 - تشغيل الـ workflow بياخد تقريبًا 2–5 دقايق.
 - لو الداشبورد ما اشتغلش، بص على سجل الـ Actions — و`plugins_errors_fatal: "no"` بتخلي أي بلوجن يفشل من غير ما يوقف الصورة.
 - ما تعدّلش `metrics.svg` يدوي — أول تشغيل جديد هيكتب فوقه.
+
+## الأجزاء اللي في كارت lowlighter ومش بتتكرر عندنا
+
+| البلوك في الصورة | السبب |
+| :--- | :--- |
+| **PageSpeed Insights** (4 دوائر) | محتاج مفتاح Google PageSpeed API (مجاني) + لينك موقع شغّال. لو عندك موقع: ضيف سر `PAGESPEED_TOKEN` وشيل التعليق عن البلوك في الـ workflow. |
+| **Suggested tracks** (Apple Music / Spotify) | محتاج ربط حساب Apple Music / Spotify بـ token خاص بيك — مش بيانات GitHub. |
+| **1 Project / Roadmap and todos** | بلوجن `plugin_projects` بيعتمد على **Projects (classic)** اللي GitHub ألغاه خلاص (API اتمسح) — مش متاح لحد. |
+| **اللوجو الكبير + Developer Program Member** | دي مش بلوجن أصلًا؛ دي صورة تجميعية (composite) من كذا كارت من موقع metrics نفسه، مش صورة واحدة. |
+
+> ملاحظة: صورة lowlighter اللي بعتها هي **6 كروت منفصلة** جنب بعض (header + habits + languages + topics + pagespeed + projects + music)،
+> إحنا بنولّد **كارت واحد** فيه أكبر قدر منها. عشان نحصل على نفس الكثافة تقريبًا، الأقسام اللي ممكن تتضاف لازم تتحقق فيها الشروط اللي في الجدول فوق.

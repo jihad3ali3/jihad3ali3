@@ -96,7 +96,7 @@ jobs:
           config_display: large
           config_timezone: Asia/Aden
           config_animations: "yes"
-          config_order: base.header, base.activity+community, base.repositories, isocalendar, languages, habits
+          config_order: base.header, base.activity+community, base.repositories, isocalendar, languages, topics, habits, achievements, followup, reactions, lines
           base: header, activity, repositories, metadata
           repositories: 100
           repositories_forks: "no"
@@ -106,10 +106,12 @@ jobs:
           # Languages breakdown
           plugin_languages: "yes"
           plugin_languages_sections: most-used
-          plugin_languages_details: percentage
+          # percentages + lines + size, plus the "indepth" legend under the bar
+          plugin_languages_details: lines, bytes-size, percentage
+          plugin_languages_indepth: "yes"
           plugin_languages_limit: 8
           plugin_languages_threshold: 0%
-          plugin_languages_analysis_timeout: 20
+          plugin_languages_analysis_timeout: 45
           plugin_languages_skipped: |
             jihad3ali3/camera_on_hostinger
             jihad3ali3/Camera_without_anything
@@ -123,6 +125,31 @@ jobs:
             jihad3ali3/replit
             jihad3ali3/replitLastVERSION
             jihad3ali3/-
+          # Mastered technologies: topic icons
+          # (fill this by adding topics — laravel, php, mysql, react … — to your repositories)
+          plugin_topics: "yes"
+          plugin_topics_mode: icons
+          plugin_topics_limit: 0
+          # Lines of code added / removed
+          plugin_lines: "yes"
+          # Achievements badges
+          plugin_achievements: "yes"
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: "yes"
+          # Recent activity on issues and pull requests
+          plugin_followup: "yes"
+          plugin_followup_sections: repositories, user
+          plugin_followup_indepth: "yes"
+          # Reactions received on issues / pull requests
+          plugin_reactions: "yes"
+          plugin_reactions_limit: 200
+          plugin_reactions_details: count, percentage
+          # PageSpeed gauges (the 4 green circles in the reference card).
+          # Needs a free Google PageSpeed API key + your live site URL. Uncomment both:
+          # plugin_pagespeed: "yes"
+          # plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
+          # plugin_pagespeed_url: https://example.com
           # Coding habits: facts + commit activity charts
           plugin_habits: "yes"
           plugin_habits_from: 200
