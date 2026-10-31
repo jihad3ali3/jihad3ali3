@@ -1,17 +1,27 @@
-# Jihad Ali Ghalib Almesbahi
+<!-- ============================================================
+     GitHub Profile README
+     Name: Jihad Ali Ghalib Almesbahi
+     GitHub: jihad3ali3
+============================================================ -->
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1200&color=58A6FF&center=true&vCenter=true&width=760&lines=Hello%2C+I'm+Jihad+Ali+Ghalib+Almesbahi;Laravel+Developer;Engineering+Graduate;System+Analysis+%26+Database+Design" alt="Typing introduction" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=2F81F7&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Jihad+Ali+Ghalib+Almesbahi;Laravel+Developer;Engineering+Graduate;System+Analysis+%26+Database+Design;Building+Solutions+That+Matter" alt="Typing SVG" />
 
-### Laravel Developer · Engineering Graduate
+<h1 align="center">Jihad Ali Ghalib Almesbahi</h1>
 
-*Building thoughtful, reliable, and maintainable web applications.*
+### Laravel Developer | Engineering Graduate
 
-<a href="https://github.com/jihad3ali3">
-  <img src="https://img.shields.io/badge/GitHub-jihad3ali3-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<img src="https://img.shields.io/badge/Location-Yemen-CE1126?style=for-the-badge" alt="Yemen" />
+*I transform ideas and real-world challenges into structured, reliable, and maintainable software solutions.*
+
+<p>
+  <a href="https://github.com/jihad3ali3">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <img src="https://img.shields.io/badge/Location-Yemen-CE1126?style=for-the-badge" alt="Location" />
+</p>
+
+<img src="https://komarev.com/ghpvc/?username=jihad3ali3&style=for-the-badge&color=2F81F7" alt="Profile views" />
 
 </div>
 
@@ -19,72 +29,65 @@
 
 ## 👨‍💻 About Me
 
-I'm an **Engineering Graduate** and **Laravel Developer** who enjoys turning real-world requirements into practical software solutions.
+Hello! I'm **Jihad Ali Ghalib Almesbahi**, an Engineering Graduate and Laravel Developer passionate about designing and building practical software solutions.
 
-My engineering background influences how I approach development: understanding problems, analyzing requirements, designing efficient solutions, and building applications that are clear and maintainable.
+My engineering background has shaped my approach to software development: understanding problems, analyzing requirements, designing efficient solutions, and translating ideas into functional applications.
 
-My main interests include **Laravel application development, database design, system analysis, and software architecture**.
+I focus on building well-structured web applications, with particular interest in backend development, database design, and software architecture.
 
 - 🎓 Engineering Graduate.
 - 💻 Focused on Laravel Application Development.
 - 🗄️ Interested in Database Design and Management.
-- 🏗️ Passionate about System Analysis and Software Design.
+- 🏗️ Passionate about System Analysis and Software Architecture.
 - 🧩 Interested in Problem Solving and Logical Thinking.
-- 🔍 Value clean, maintainable, and well-structured software.
+- 🔍 Value Clean Code, Maintainability, and Scalability.
 - 🌐 Familiar with Computer Networking Fundamentals.
-- 🚀 Committed to continuous learning and improvement.
+- 🚀 Continuously learning and improving my technical skills.
 
 ---
 
 ## 🛠️ Technical Skills
 
-### Application Development
+### Backend Development
 
 <p>
-<img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-<img src="https://img.shields.io/badge/Inertia.js-9553E9?style=for-the-badge" alt="Inertia.js" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
+  <img src="https://img.shields.io/badge/REST_APIs-009688?style=for-the-badge" alt="REST APIs" />
 </p>
 
-### Database & Data Design
+### Frontend Development
 
 <p>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-<img src="https://img.shields.io/badge/Database_Design-336791?style=for-the-badge" alt="Database Design" />
-<img src="https://img.shields.io/badge/Data_Modeling-475569?style=for-the-badge" alt="Data Modeling" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Inertia.js-9553E9?style=for-the-badge&logo=inertia&logoColor=white" alt="Inertia.js" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
 </p>
 
-### Tools & Workflow
+### Database & Data Management
 
 <p>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Database_Design-336791?style=for-the-badge" alt="Database Design" />
 </p>
 
----
+### Software Engineering
 
-## 🧠 Engineering Strengths
+- System Analysis and Requirements Understanding.
+- Software Design and Architecture.
+- Database Modeling and Relationships.
+- Problem Solving and Logical Thinking.
+- Clean Code and Maintainable Software.
+- SOLID Principles and Design Patterns.
 
-- **System Analysis** — understanding requirements and breaking down complex problems.
-- **Database Design** — structuring relational data and modeling relationships.
-- **Problem Solving** — approaching challenges logically and methodically.
-- **Software Design** — focusing on application structure, clarity, and maintainability.
-- **Networking Fundamentals** — foundational knowledge of computer networking.
+### Tools & Other Knowledge
 
----
-
-## 🎯 Current Focus
-
-Deepening my skills in Laravel development, database design, and software architecture while improving the way I analyze, structure, and deliver web applications.
-
-## 💡 My Philosophy
-
-> Great software starts with understanding the problem, not writing the code.
->
-> Analyze carefully. Design thoughtfully. Build efficiently. Improve continuously.
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Visual Studio Code" />
+  <img src="https://img.shields.io/badge/Networking-Fundamentals-1572B6?style=for-the-badge" alt="Networking Fundamentals" />
+</p>
 
 ---
 
@@ -92,9 +95,21 @@ Deepening my skills in Laravel development, database design, and software archit
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=jihad3ali3&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub Statistics" />
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=jihad3ali3&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
+
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jihad3ali3&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=jihad3ali3&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 
 </div>
+
+---
+
+## 🎯 My Philosophy
+
+> Great software starts with understanding the problem, not writing the code.
+>
+> Analyze carefully. Design thoughtfully. Build efficiently. Improve continuously.
 
 ---
 
@@ -104,8 +119,6 @@ Deepening my skills in Laravel development, database design, and software archit
 
 *Always open to learning, meaningful collaboration, and interesting software engineering challenges.*
 
-<a href="https://github.com/jihad3ali3">
-  <img src="https://img.shields.io/badge/Let's_Connect-GitHub-2F81F7?style=for-the-badge&logo=github&logoColor=white" alt="Connect on GitHub" />
-</a>
+⭐ **Let's build something meaningful together.**
 
 </div>
