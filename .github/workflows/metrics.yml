@@ -1,6 +1,6 @@
 name: Profile metrics
 
-# Rebuilds the dashboard SVG used by README.md
+# Rebuilds metrics.svg (the dashboard shown in README.md)
 # Powered by https://github.com/lowlighter/metrics
 on:
   schedule:
@@ -21,25 +21,25 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # ---- Cyber violet / cyan accents (applied on top of the classic template) ----
-  CYBER_CSS: |
+  # ---- Laravel red / orange / amber accents (applied on top of the classic template) ----
+  THEME_CSS: |
     h1, h2, h3 {
-      color: #8B5CF6 !important;
+      color: #FF2D20 !important;
     }
     .field svg {
-      fill: #22D3EE;
+      fill: #FF8A3D;
     }
     a {
-      color: #22D3EE;
+      color: #FF8A3D;
     }
-  # Re-color the GitHub "green squares" (calendar + habit charts) into violet
-  CYBER_JS: |
+  # Re-color the GitHub "green squares" (calendar + habit charts) into the same ramp
+  THEME_JS: |
     const palette = {
       "#ebedf0": "#21262d",
-      "#9be9a8": "#c4b5fd",
-      "#40c463": "#8b5cf6",
-      "#30a14e": "#6d28d9",
-      "#216e39": "#4c1d95",
+      "#9be9a8": "#FFD9A8",
+      "#40c463": "#FFB800",
+      "#30a14e": "#FF8A3D",
+      "#216e39": "#FF2D20",
     }
     for (const [from, to] of Object.entries(palette)) {
       for (const node of document.querySelectorAll(`svg [fill="${from}"]`)) {
@@ -62,10 +62,10 @@ jobs:
           fi
 
       # Wide dashboard: header + activity + repositories + 3D calendar + languages + habits
-      - name: Dashboard card (metrics.cyber.svg)
+      - name: Dashboard card (metrics.svg)
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.cyber.svg
+          filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN || github.token }}
           committer_token: ${{ github.token }}
           user: jihad3ali3
@@ -107,8 +107,8 @@ jobs:
           plugin_habits_facts: "yes"
           plugin_habits_charts: "yes"
           plugin_habits_charts_type: classic
-          extras_css: ${{ env.CYBER_CSS }}
-          extras_js: ${{ env.CYBER_JS }}
+          extras_css: ${{ env.THEME_CSS }}
+          extras_js: ${{ env.THEME_JS }}
           retries: 3
           retries_delay: 10
           plugins_errors_fatal: "no"
