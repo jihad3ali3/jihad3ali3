@@ -2,7 +2,7 @@
      GITHUB PROFILE README — Jihad Ali Ghalib Almesbahi
      Repo: github.com/jihad3ali3/jihad3ali3  →  README.md
 
-     🎨 Palette:  #FF2D20 (Laravel Red) → #FF8A3D (Orange) → #FFB800 (Amber)
+     🎨 Palette:  #3B82F6 (Blue) → #6366F1 (Indigo) → #22D3EE (Cyan)
      🖤 Canvas :  #0D1117 (GitHub Dark)
      ✅ Every image URL in this file was tested and returns HTTP 200.
      ═══════════════════════════════════════════════════════════════════ -->
@@ -11,10 +11,10 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF2D20,50:FF8A3D,100:FFB800&height=190&section=header&text=Jihad%20Ali%20Ghalib%20Almesbahi&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=Laravel%20Developer%20%C2%B7%20Backend%20Engineer%20%C2%B7%20System%20Analyst&descAlignY=66&descSize=17&animation=fadeIn" alt="Jihad Ali Ghalib Almesbahi" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:3B82F6,50:6366F1,100:22D3EE&height=190&section=header&text=Jihad%20Ali%20Ghalib%20Almesbahi&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=Laravel%20Developer%20%C2%B7%20Backend%20Engineer%20%C2%B7%20System%20Analyst&descAlignY=66&descSize=17&animation=fadeIn" alt="Jihad Ali Ghalib Almesbahi" />
 
 <!-- animated subtitle — the NAME above never moves, only these role words type out -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=1400&color=FFB800&center=true&vCenter=true&width=620&height=45&lines=Laravel+Developer;Backend+Engineer;System+Analyst;Database+Designer" alt="Roles" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=1400&color=22D3EE&center=true&vCenter=true&width=620&height=45&lines=Laravel+Developer;Backend+Engineer;System+Analyst;Database+Designer" alt="Roles" />
 
 <em>I turn ambiguous requirements into structured, reliable, and maintainable software.</em>
 
@@ -23,8 +23,8 @@
 <a href="https://github.com/jihad3ali3">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </a>
-<img src="https://img.shields.io/badge/Yemen-FF2D20?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Yemen" />
-<img src="https://komarev.com/ghpvc/?username=jihad3ali3&style=for-the-badge&color=FF8A3D&label=PROFILE+VIEWS" alt="Profile views" />
+<img src="https://img.shields.io/badge/Yemen-3B82F6?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Yemen" />
+<img src="https://komarev.com/ghpvc/?username=jihad3ali3&style=for-the-badge&color=6366F1&label=PROFILE+VIEWS" alt="Profile views" />
 
 </div>
 
@@ -37,19 +37,19 @@
 <table>
   <tr>
     <td align="center" width="25%">
-      <img src="https://img.shields.io/badge/%F0%9F%8E%93-Background-0D1117?style=flat-square&labelColor=FF2D20" alt="" /><br />
+      <img src="https://img.shields.io/badge/%F0%9F%8E%93-Background-0D1117?style=flat-square&labelColor=3B82F6" alt="" /><br />
       <b>Engineering Graduate</b>
     </td>
     <td align="center" width="25%">
-      <img src="https://img.shields.io/badge/%F0%9F%92%BB-Core_Focus-0D1117?style=flat-square&labelColor=FF8A3D" alt="" /><br />
+      <img src="https://img.shields.io/badge/%F0%9F%92%BB-Core_Focus-0D1117?style=flat-square&labelColor=6366F1" alt="" /><br />
       <b>Laravel &amp; Backend</b>
     </td>
     <td align="center" width="25%">
-      <img src="https://img.shields.io/badge/%F0%9F%97%84%EF%B8%8F-Specialization-0D1117?style=flat-square&labelColor=FFB800" alt="" /><br />
+      <img src="https://img.shields.io/badge/%F0%9F%97%84%EF%B8%8F-Specialization-0D1117?style=flat-square&labelColor=22D3EE" alt="" /><br />
       <b>Database Design</b>
     </td>
     <td align="center" width="25%">
-      <img src="https://img.shields.io/badge/%F0%9F%8F%97%EF%B8%8F-Strength-0D1117?style=flat-square&labelColor=FF2D20" alt="" /><br />
+      <img src="https://img.shields.io/badge/%F0%9F%8F%97%EF%B8%8F-Strength-0D1117?style=flat-square&labelColor=3B82F6" alt="" /><br />
       <b>System Analysis</b>
     </td>
   </tr>
@@ -96,7 +96,7 @@
       <img src="https://img.shields.io/badge/SOLID-2E8B57?style=for-the-badge&logo=checkmarx&logoColor=white" alt="SOLID" />
       <img src="https://img.shields.io/badge/Design_Patterns-6E4C13?style=for-the-badge&logo=refactoring&logoColor=white" alt="Design Patterns" />
       <img src="https://img.shields.io/badge/Clean_Code-1F6FEB?style=for-the-badge&logo=sonarqube&logoColor=white" alt="Clean Code" />
-      <img src="https://img.shields.io/badge/System_Analysis-8B5CF6?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="System Analysis" />
+      <img src="https://img.shields.io/badge/System_Analysis-6366F1?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="System Analysis" />
     </td>
   </tr>
   <tr>
@@ -205,6 +205,6 @@ Working software in front of real users teaches more than another week of planni
 
 <em>Always open to learning, collaboration, and interesting engineering challenges.</em>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF2D20,50:FF8A3D,100:FFB800&height=120&section=footer" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3B82F6,50:6366F1,100:22D3EE&height=120&section=footer" alt="" />
 
 </div>

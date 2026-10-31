@@ -18,16 +18,21 @@
 
 الداشبورد فيه:
 
-| القسم | البلوجن / الإعداد |
-| :--- | :--- |
-| الهيدر (الاسم، تاريخ الانضمام، الموقع، المتابعين) | `base: header` |
-| عدّادات النشاط (commits / PRs / comments) | `base: activity` |
-| الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` |
-| تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) |
-| توزيع اللغات | `plugin_languages` |
-| عادات الكود + رسم Commit activity per hour/day | `plugin_habits` (facts + charts) |
+| القسم | البلوجن / الإعداد | محتاج إيه |
+| :--- | :--- | :--- |
+| الهيدر (الاسم، تاريخ الانضمام، الموقع، المتابعين) | `base: header` | — |
+| عدّادات النشاط (commits / PRs / comments) | `base: activity` | — |
+| الريبوهات (رخص، releases، packages، disk، stars/forks/watchers) | `base: repositories` | `METRICS_TOKEN` |
+| تقويم المساهمات ثلاثي الأبعاد + الـ streaks | `plugin_isocalendar` (`full-year`) | — |
+| توزيع اللغات + الـ legend (نسب/أسطر/حجم) | `plugin_languages` + `plugin_languages_indepth` | `METRICS_TOKEN` |
+| **Mastered technologies** (شبكة أيقونات التكنولوجيات) | `plugin_topics` (`mode: mastered`) | **تعمل Star لريبوهات فيها topics** |
+| عادات الكود + رسوم (time of day / day / language activity) | `plugin_habits` (facts + charts) | `METRICS_TOKEN` |
+| أسطر الكود المضافة/المحذوفة | `plugin_lines` | — |
+| شارات الإنجازات | `plugin_achievements` (compact) | — |
+| آخر نشاط على الـ issues / PRs | `plugin_followup` (indepth) | — |
+| الـ Reactions اللي استلمتها | `plugin_reactions` | — |
 
-الألوان متظبطة على ثيم البروفايل (أحمر `#FF2D20` + برتقالي `#FF8A3D` + كهرماني `#FFB800`) عن طريق `extras_css` و `extras_js`،
+الألوان متظبطة على ثيم البروفايل (أزرق `#3B82F6` + إنديغو `#6366F1` + سماوي `#22D3EE`) عن طريق `THEME_CSS` و `THEME_JS`،
 والتوقيت مضبوط على `Asia/Aden`.
 
 ## التشغيل
@@ -37,19 +42,37 @@
 3. بعد ما يخلص، هتلاقي `metrics.svg` في جذر الريبو، وصورة الـ README هتشتغل.
 4. التشغيل المجدول: كل يوم **02:17 UTC** (05:17 صباحًا بتوقيت صنعاء).
 
-## التوكن (اختياري لكن مستحسن)
+## 🔑 التوكن — إيه هو بالظبط وإزاي تعمله
 
-الـ workflow بيشتغل بـ `GITHUB_TOKEN` المدمج، وكفاية للريبوهات العامة فقط.
-عشان المساهمات الخاصة (private) تظهر في التقويم والـ streaks:
+### يعني إيه "توكن"؟
+التوكن = **مفتاح/باسورد مؤقت** بيديه للـ workflow صلاحية يقرأ كل ريبوهاتك وإحصائياتك.
+الـ workflow بيشتغل بتوكن GitHub المدمج (`GITHUB_TOKEN`)، وده **بيشوف ريبو البروفايل بس** — مش باقي الـ 17 ريبو عندك.
+عشان كده من غيره الكارت بيطلع ناقص: `1 Repository` و `0 Languages` و `Recent coding habits → Unexpected error`.
 
-1. اعمل Personal Access Token (classic) من Settings ← Developer settings، بصلاحيات:
-   - `repo` (للمساهمات الخاصة)
-   - `read:user`
-   - `read:org` (لو عندك أورجانيزيشنز)
-2. من الريبو: **Settings ← Secrets and variables ← Actions ← New repository secret** بالاسم `METRICS_TOKEN`.
-3. الـ workflow بيستخدمه تلقائيًا: `${{ secrets.METRICS_TOKEN || github.token }}` — لو السر مش موجود بيرجع للتوكن الافتراضي بدون فشل.
+### خطوة 1 — اعمل التوكن (دقيقة واحدة)
+1. افتح الرابط ده (اختار الصلاحيات جاهزة):
+   👉 https://github.com/settings/tokens/new?scopes=repo,read:user,read:org&description=profile-metrics
+2. **Note**: سيبها `profile-metrics` (أو أي اسم).
+3. **Expiration**: اختار `90 days` أو `No expiration`.
+4. اتأكد إن علامة ✅ موجودة على: `repo` و `read:user` و `read:org`.
+5. دوس **Generate token** تحت خالص.
+6. هتلاقي كود بيبدأ بـ `ghp_...` — **انسخه فورًا** (مش هيظهر تاني بعد ما تقفل الصفحة).
 
-> 💡 ملاحظة مهمة: أغلب نشاطك الحالي مساهمات في ريبوهات خاصة (حوالي 265 مساهمة مقيدة)، وبدون `METRICS_TOKEN` التقويم هيبان أفتح بكتير من الحقيقة.
+### خطوة 2 — حطّه في الريبو
+1. افتح: https://github.com/jihad3ali3/jihad3ali3/settings/secrets/actions
+2. دوس **New repository secret**.
+3. **Name**: `METRICS_TOKEN` ← بالحرف الكبير ده بالظبط.
+4. **Secret**: الصق الكود اللي نسخته (`ghp_...`).
+5. دوس **Add secret**.
+
+### خطوة 3 — شغّل التحديث
+1. افتح: https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml
+2. دوس **Run workflow** ← **Run workflow**.
+3. استنى دقيقة، وحدّث صفحة البروفايل — الأقسام الناقصة هتتملى.
+
+> ✅ التوكن **سري ومش بيظهر** في الكارت ولا في الـ README ولا في اللوجز.
+> ✅ تقدر تلغيه في أي وقت من https://github.com/settings/tokens — والكارت هيشتغل زي الأول بس ببيانات أقل.
+> ✅ الـ workflow مستخدمه كده: `token: ${{ secrets.METRICS_TOKEN || github.token }}` — يعني لو مسحت السر مفيش حاجة هتتكسر.
 
 ## التخصيص
 
@@ -61,7 +84,7 @@
 - **ترتيب الأقسام**: `config_order`.
 - **استبعاد ريبوهات من حساب اللغات**: `plugin_languages_skipped` (مستبعد حاليًا ريبوهات التجارب/الكاميرا
   زي `camera2` و`TESTC` و`ONE` و`replit` عشان الكارت يبان بلغاتك الحقيقية).
-- **تغيير الألوان**: عدّل `THEME_CSS` و `THEME_JS` في أعلى الـ workflow (مش محتاج تلمس باقي الملف).
+- **تغيير الألوان**: عدّل `THEME_CSS` و `THEME_JS` في أعلى الـ workflow (مش محتاج تلمس باقي الملف). العناوين = `#6366F1`، الأيقونات/اللينكات = `#22D3EE`، ومربعات التقويم/الرسوم = `#C7D2FE → #60A5FA → #3B82F6 → #6366F1`.
 - **عرض عادي بدل العريض**: شيل `config_display: large` أو خليه `columns`.
 - **وقت التشغيل**: عدّل الـ `cron` (بتوقيت UTC).
 
@@ -70,3 +93,15 @@
 - تشغيل الـ workflow بياخد تقريبًا 2–5 دقايق.
 - لو الداشبورد ما اشتغلش، بص على سجل الـ Actions — و`plugins_errors_fatal: "no"` بتخلي أي بلوجن يفشل من غير ما يوقف الصورة.
 - ما تعدّلش `metrics.svg` يدوي — أول تشغيل جديد هيكتب فوقه.
+
+## الأجزاء اللي في كارت lowlighter ومش بتتكرر عندنا
+
+| البلوك في الصورة | السبب |
+| :--- | :--- |
+| **PageSpeed Insights** (4 دوائر) | محتاج مفتاح Google PageSpeed API (مجاني) + لينك موقع شغّال. لو عندك موقع: ضيف سر `PAGESPEED_TOKEN` وشيل التعليق عن البلوك في الـ workflow. |
+| **Suggested tracks** (Apple Music / Spotify) | محتاج ربط حساب Apple Music / Spotify بـ token خاص بيك — مش بيانات GitHub. |
+| **1 Project / Roadmap and todos** | بلوجن `plugin_projects` بيعتمد على **Projects (classic)** اللي GitHub ألغاه خلاص (API اتمسح) — مش متاح لحد. |
+| **اللوجو الكبير + Developer Program Member** | دي مش بلوجن أصلًا؛ دي صورة تجميعية (composite) من كذا كارت من موقع metrics نفسه، مش صورة واحدة. |
+
+> ملاحظة: صورة lowlighter اللي بعتها هي **6 كروت منفصلة** جنب بعض (header + habits + languages + topics + pagespeed + projects + music)،
+> إحنا بنولّد **كارت واحد** فيه أكبر قدر منها. عشان نحصل على نفس الكثافة تقريبًا، الأقسام اللي ممكن تتضاف لازم تتحقق فيها الشروط اللي في الجدول فوق.
