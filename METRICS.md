@@ -42,22 +42,37 @@
 3. بعد ما يخلص، هتلاقي `metrics.svg` في جذر الريبو، وصورة الـ README هتشتغل.
 4. التشغيل المجدول: كل يوم **02:17 UTC** (05:17 صباحًا بتوقيت صنعاء).
 
-## التوكن (اختياري لكن مستحسن)
+## 🔑 التوكن — إيه هو بالظبط وإزاي تعمله
 
-الـ workflow بيشتغل بـ `GITHUB_TOKEN` المدمج، وكفاية للريبوهات العامة فقط.
-عشان المساهمات الخاصة (private) تظهر في التقويم والـ streaks:
+### يعني إيه "توكن"؟
+التوكن = **مفتاح/باسورد مؤقت** بيديه للـ workflow صلاحية يقرأ كل ريبوهاتك وإحصائياتك.
+الـ workflow بيشتغل بتوكن GitHub المدمج (`GITHUB_TOKEN`)، وده **بيشوف ريبو البروفايل بس** — مش باقي الـ 17 ريبو عندك.
+عشان كده من غيره الكارت بيطلع ناقص: `1 Repository` و `0 Languages` و `Recent coding habits → Unexpected error`.
 
-1. اعمل Personal Access Token (classic) من Settings ← Developer settings، بصلاحيات:
-   - `repo` (للمساهمات الخاصة)
-   - `read:user`
-   - `read:org` (لو عندك أورجانيزيشنز)
-2. من الريبو: **Settings ← Secrets and variables ← Actions ← New repository secret** بالاسم `METRICS_TOKEN`.
-3. الـ workflow بيستخدمه تلقائيًا: `${{ secrets.METRICS_TOKEN || github.token }}` — لو السر مش موجود بيرجع للتوكن الافتراضي بدون فشل.
+### خطوة 1 — اعمل التوكن (دقيقة واحدة)
+1. افتح الرابط ده (اختار الصلاحيات جاهزة):
+   👉 https://github.com/settings/tokens/new?scopes=repo,read:user,read:org&description=profile-metrics
+2. **Note**: سيبها `profile-metrics` (أو أي اسم).
+3. **Expiration**: اختار `90 days` أو `No expiration`.
+4. اتأكد إن علامة ✅ موجودة على: `repo` و `read:user` و `read:org`.
+5. دوس **Generate token** تحت خالص.
+6. هتلاقي كود بيبدأ بـ `ghp_...` — **انسخه فورًا** (مش هيظهر تاني بعد ما تقفل الصفحة).
 
-> 💡 ملاحظة مهمة (1): أغلب نشاطك الحالي مساهمات في ريبوهات خاصة (حوالي 265 مساهمة مقيدة)، وبدون `METRICS_TOKEN` التقويم هيبان أفتح بكتير من الحقيقة.
+### خطوة 2 — حطّه في الريبو
+1. افتح: https://github.com/jihad3ali3/jihad3ali3/settings/secrets/actions
+2. دوس **New repository secret**.
+3. **Name**: `METRICS_TOKEN` ← بالحرف الكبير ده بالظبط.
+4. **Secret**: الصق الكود اللي نسخته (`ghp_...`).
+5. دوس **Add secret**.
 
-> ⚠️ ملاحظة مهمة (2): `GITHUB_TOKEN` بيشوف **ريبو واحد بس** (ريبو البروفايل نفسه). عشان كده من غيره الكارت بيطلع ناقص:
-> `1 Repository` و `0 Languages` و `Recent coding habits → Unexpected error`. أول ما تضيف `METRICS_TOKEN` الأقسام دي هتتعبّى ببياناتك الحقيقية (17 ريبو + اللغات + الرسوم).
+### خطوة 3 — شغّل التحديث
+1. افتح: https://github.com/jihad3ali3/jihad3ali3/actions/workflows/metrics.yml
+2. دوس **Run workflow** ← **Run workflow**.
+3. استنى دقيقة، وحدّث صفحة البروفايل — الأقسام الناقصة هتتملى.
+
+> ✅ التوكن **سري ومش بيظهر** في الكارت ولا في الـ README ولا في اللوجز.
+> ✅ تقدر تلغيه في أي وقت من https://github.com/settings/tokens — والكارت هيشتغل زي الأول بس ببيانات أقل.
+> ✅ الـ workflow مستخدمه كده: `token: ${{ secrets.METRICS_TOKEN || github.token }}` — يعني لو مسحت السر مفيش حاجة هتتكسر.
 
 ## التخصيص
 
